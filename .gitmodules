@@ -1,0 +1,6 @@
+[submodule "unitree_IL_lerobot"]
+	path = unitree_IL_lerobot
+	url = https://github.com/unitreerobotics/unitree_IL_lerobot.git
+[submodule "unitree_lerobot"]
+	path = unitree_lerobot
+	url = https://github.com/unitreerobotics/unitree_lerobot.git

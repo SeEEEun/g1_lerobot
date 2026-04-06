@@ -1,0 +1,30 @@
+# 대용량 데이터 / 모델 (GitHub 불가)
+data/
+checkpoints/
+envs/
+logs/
+recovered/
+
+# 모델 파일
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+.eggs/
+dist/
+build/
+*.so
+
+# 기타
+.codex
+.DS_Store
+*.log
+*.tmp
+outputs/
+wandb/

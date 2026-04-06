@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  cyclonedds_laptop.xml — 노트북에서 사용 (ROS2 Humble, eth0: 192.168.123.199)
+
+  적용:
+    export CYCLONEDDS_URI=file:///home/jairlab/g1_lerobot/ros2_nodes/cyclonedds_laptop.xml
+    export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+-->
+<CycloneDDS xmlns="https://cdds.io/config"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="https://cdds.io/config https://raw.githubusercontent.com/eclipse-cyclonedds/cyclonedds/master/etc/cyclonedds.xsd">
+  <Domain id="any">
+    <General>
+      <!-- 유선 인터페이스 (enp46s0: 192.168.123.199) -->
+      <NetworkInterfaceAddress>enp46s0</NetworkInterfaceAddress>
+      <AllowMulticast>true</AllowMulticast>
+      <MaxMessageSize>65500B</MaxMessageSize>
+    </General>
+    <Discovery>
+      <!-- G1 PC2 IP를 명시적으로 peer로 추가 -->
+      <Peers>
+        <Peer address="192.168.123.123"/>
+      </Peers>
+      <ParticipantIndex>auto</ParticipantIndex>
+    </Discovery>
+  </Domain>
+</CycloneDDS>

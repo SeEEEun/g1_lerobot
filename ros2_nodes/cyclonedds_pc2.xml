@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  cyclonedds_pc2.xml — G1 PC2에서 사용 (ROS2 Foxy, eth0: 192.168.123.123)
+
+  적용:
+    export CYCLONEDDS_URI=file:///home/unitree/cyclonedds_pc2.xml
+    export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+-->
+<CycloneDDS xmlns="https://cdds.io/config"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="https://cdds.io/config https://raw.githubusercontent.com/eclipse-cyclonedds/cyclonedds/master/etc/cyclonedds.xsd">
+  <Domain id="any">
+    <General>
+      <!-- eth0: 192.168.123.123 (노트북과 연결된 유선 인터페이스) -->
+      <NetworkInterfaceAddress>eth0</NetworkInterfaceAddress>
+      <AllowMulticast>true</AllowMulticast>
+      <MaxMessageSize>65500B</MaxMessageSize>
+    </General>
+    <Discovery>
+      <!-- 노트북 IP를 명시적으로 peer로 추가 (멀티캐스트 불안정 시 대비) -->
+      <Peers>
+        <Peer address="192.168.123.199"/>
+      </Peers>
+      <ParticipantIndex>auto</ParticipantIndex>
+    </Discovery>
+  </Domain>
+</CycloneDDS>
