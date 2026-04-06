@@ -12,8 +12,9 @@
   <Domain id="any">
     <General>
       <!-- 유선 인터페이스 (enp46s0: 192.168.123.199) -->
-      <NetworkInterfaceAddress>enp46s0</NetworkInterfaceAddress>
-      <AllowMulticast>true</AllowMulticast>
+      <Interfaces>
+        <NetworkInterface name="enp46s0" multicast="true"/>
+      </Interfaces>
       <MaxMessageSize>65500B</MaxMessageSize>
     </General>
     <Discovery>
