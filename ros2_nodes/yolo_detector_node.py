@@ -62,7 +62,7 @@ class YoloDetectorNode(Node):
         )
 
         self.sub = self.create_subscription(
-            Image, '/camera/color/image_raw', self._callback, best_effort)
+            Image, '/camera/camera/color/image_raw', self._callback, best_effort)
 
         self.det_pub = self.create_publisher(String, '/yolo/detections',      10)
         self.img_pub = self.create_publisher(Image,  '/yolo/annotated_image', best_effort)
