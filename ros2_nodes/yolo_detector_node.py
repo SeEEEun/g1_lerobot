@@ -119,7 +119,7 @@ class YoloDetectorNode(Node):
         if self._frame_count % 30 == 0:
             self.get_logger().info(
                 f'frame={self._frame_count}  detections={len(detections)}  '
-                + '  '.join(f"{d["class"]}({d["conf"]:.2f})" for d in detections)
+                + '  '.join(f"{d['class']}({d['conf']:.2f})" for d in detections)
             )
 
     def destroy_node(self):
