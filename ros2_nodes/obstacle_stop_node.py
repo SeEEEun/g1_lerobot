@@ -40,7 +40,7 @@ class ObstacleStopNode(Node):
         )
 
         self.sub = self.create_subscription(
-            Image, '/camera/camera/depth/image_raw', self._callback, best_effort)
+            Image, '/camera/camera/depth/image_rect_raw', self._callback, best_effort)
         self.pub = self.create_publisher(Bool, '/obstacle/stop', 10)
 
         self.get_logger().info(
